@@ -38,7 +38,7 @@ function UserCardBlock(props) {
                         props.products && Object.keys(props.products).map(product => (
                             <tr key={props.products[product]._id}>
                                 <th>
-                                    <img style={{ width: '75px' }} alt="product" src={`http://localhost:${port}/${props.products[product].images[0]}`} />
+                                    <img style={{ width: '75px' }} alt="product" src={`https://travel-shop-in-mern.herokuapp.com/${props.products[product].images[0]}`} />
                                 </th>
                                 <td>{ props.products[product].quantity } EA</td>
                                 <td>{ `$${props.products[product].price}`}</td>

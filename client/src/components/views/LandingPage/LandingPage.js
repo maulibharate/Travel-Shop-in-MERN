@@ -83,7 +83,7 @@ function LandingPage() {
                         <Carousel autoplay>
                             {Object.keys(Products[info].images).map((item) => (
                                 <div>
-                                    <img src={`http://localhost:${port}/${Products[info].images[item]}`}  alt="productImage" style={{ width: '100%', maxHeight: '250px'}}/>
+                                    <img src={`https://travel-shop-in-mern.herokuapp.com/${Products[info].images[item]}`}  alt="productImage" style={{ width: '100%', maxHeight: '250px'}}/>
                                 </div>
                             ))}
                         </Carousel> 
