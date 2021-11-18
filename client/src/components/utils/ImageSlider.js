@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'antd';
+const port = process.env.PORT || 5000
 
 function ImageSlider(props) {
     return (
@@ -7,7 +8,7 @@ function ImageSlider(props) {
             <Carousel autoplay>
                 {props.images.map((image, index) => (
                     <div key={index} >
-                        <img src={`http://localhost:5000/${image}`}  alt="productImage" style={{ width: '100%', maxHeight: '150px'}}/>
+                        <img src={`http://localhost:${port}/${image}`}  alt="productImage" style={{ width: '100%', maxHeight: '150px'}}/>
                     </div>
                 ))}
             </Carousel> 

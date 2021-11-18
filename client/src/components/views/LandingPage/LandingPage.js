@@ -8,7 +8,7 @@ import RadioBox from './Sections/RadioBox';
 import { price, continents } from './Sections/Data';
 import SearchFeature from './Sections/SearchFeature';
 import './Sections/LandingPage.css';
-
+const port = process.env.PORT || 5000
 const { Meta } = Card;
 
 function LandingPage() {
@@ -83,7 +83,7 @@ function LandingPage() {
                         <Carousel autoplay>
                             {Object.keys(Products[info].images).map((item) => (
                                 <div>
-                                    <img src={`http://localhost:5000/${Products[info].images[item]}`}  alt="productImage" style={{ width: '100%', maxHeight: '250px'}}/>
+                                    <img src={`http://localhost:${port}/${Products[info].images[item]}`}  alt="productImage" style={{ width: '100%', maxHeight: '250px'}}/>
                                 </div>
                             ))}
                         </Carousel> 

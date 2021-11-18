@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 import { Icon } from 'antd';
 import Axios from 'axios';
-
+const port = process.env.PORT || 5000
 function FileUpload(props) {
     
     const [Images, setImages] = useState([]);
@@ -73,7 +73,7 @@ function FileUpload(props) {
                     </div> */}
                      {Images.map((image, index) => (
                         <div onClick={() => onDelete(image)}>
-                            <img style={{ minWidth: '300px', width: '300px', height: '240px', cursor: 'pointer' }} src={`http://localhost:5000/${image}`} alt={`productImg-${index}`}/>
+                            <img style={{ minWidth: '300px', width: '300px', height: '240px', cursor: 'pointer' }} src={`http://localhost:${port}/${image}`} alt={`productImg-${index}`}/>
                          </div>   
                     ))}
             </div>

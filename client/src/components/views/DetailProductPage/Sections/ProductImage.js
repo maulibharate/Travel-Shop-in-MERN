@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ImageGallery from 'react-image-gallery'
+const port = process.env.PORT || 5000
 
 function ProductImage(props) {
 
@@ -12,8 +13,8 @@ function ProductImage(props) {
 
             props.detail.images && props.detail.images.map(item => {
                 images.push({
-                    original: `http://localhost:5000/${item}`,
-                    thumbnail: `http://localhost:5000/${item}`
+                    original: `http://localhost:${port}/${item}`,
+                    thumbnail: `http://localhost:${port}/${item}`
                 })
             })
             setImages(images)
