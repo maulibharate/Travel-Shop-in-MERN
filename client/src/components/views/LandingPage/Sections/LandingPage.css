@@ -1,0 +1,13 @@
+.MainHeading {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background-color: #fff;
+    margin-top: -6%;
+    padding-top: 1em;
+}
+
+.MainContainer {
+    margin-top: 6%;
+}
