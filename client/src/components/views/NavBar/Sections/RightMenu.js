@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 function RightMenu(props) {
   const user = useSelector(state => state.user)
-  const badgeCount= user.userData
+  // const badgeCount= user.userData
   // const badgeCount= user.userData && user.userData.cart.length
 
   const logoutHandler = () => {
@@ -39,7 +39,8 @@ function RightMenu(props) {
           <a href="/product/upload">Upload</a>
         </Menu.Item>
         <Menu.Item key="cart">
-          <Badge count={badgeCount}>
+          <Badge count={user.userData && user.userData.cart.length}>
+          {/* <Badge> */}
             <a href="/user/cart" style={{ marginRight: -22, color: '#667777' }}>
               <Icon type="shopping-cart" style={{ fontSize: 30, marginBottom: 12 }} />
             </a>

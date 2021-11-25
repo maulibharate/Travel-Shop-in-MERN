@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Descriptions } from 'antd';
+import $ from 'jquery';
+import './ProductInfo.css'
 
 function ProductInfo(props) {
 
@@ -11,7 +13,22 @@ function ProductInfo(props) {
     }, [props.detail])
 
     const addToCarthandler = () => {
+        spinner()
         props.addToCart(props.detail._id)
+    }
+
+    const spinner = () => {
+        $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
+        // $(window).on('load', function(){
+        setTimeout(removeLoader, 10000); //wait for page load PLUS two seconds.
+        // });
+    }
+
+    const removeLoader = () => {
+        $( "#loadingDiv" ).fadeOut(500, function() {
+        // fadeOut complete. Remove the loading div
+        $( "#loadingDiv" ).remove(); //makes page more lightweight 
+    });  
     }
     return (
         <div>
@@ -29,7 +46,7 @@ function ProductInfo(props) {
                 <br />
                 <br />
                 <div className="d-flex text-center">
-                    <Button size="large" shape="round" type="danger"
+                    <Button disabled={!props.detail._id} size="large" shape="round" type="danger"
                         onClick={addToCarthandler}
                     >
                         Add to Cart    
